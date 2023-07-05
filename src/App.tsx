@@ -41,41 +41,39 @@ function App() {
     // }
     // setEventos([...eventos]);
   };
-  const deletarEvento = (id: number) => {
-    // setEventos([...eventos.filter((evento) => evento.id !== id)]);
-  };
+  // const deletarEvento = (id: number) => {
+  //   // setEventos([...eventos.filter((evento) => evento.id !== id)]);
+  // };
 
   const aplicarFiltro = (data: Date | null) => {
     setFiltro(data);
   };
 
-  const filtrados = !filtro
-    // ? eventos
-    // : eventos.filter(
-    //     (evento) =>
-    //       filtro!.toISOString().slice(0, 10) ===
-    //       evento.inicio.toISOString().slice(0, 10)
-    //   );
+  const filtrados = !filtro;
+  // ? eventos
+  // : eventos.filter(
+  //     (evento) =>
+  //       filtro!.toISOString().slice(0, 10) ===
+  //       evento.inicio.toISOString().slice(0, 10)
+  //   );
 
   return (
     <RecoilRoot>
       <div className={style.App}>
         <div className={style.Coluna}>
           <Card>
-            <Formulario  />
+            <Formulario />
           </Card>
           <hr />
           <Card>
             <ListaDeEventos
               aoFiltroAplicado={aplicarFiltro}
               aoAlterarStatus={alterarStatusEvento}
-              aoDeletarEvento={deletarEvento}
-            
             />
           </Card>
         </div>
         <div className={style.Coluna}>
-          <Calendario  />
+          <Calendario />
         </div>
       </div>
     </RecoilRoot>
